@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin|Petit+Formal+Script');
+
+.Desktop {
+  min-width: 375px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: Pangolin, Georgia, sans-serif;
+  background: aliceblue;
+}
