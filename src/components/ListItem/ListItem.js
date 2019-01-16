@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import '../ListItem/ListItem.css';
-import { FaSave, FaTimes, FaPen, FaTrash } from 'react-icons/fa';
+import { FaRegCircle, FaSave, FaTimes, FaPen, FaTrash } from 'react-icons/fa';
 
 class ListItem extends Component {
     state = {
-        editing: false
+        editing: false,
+        checked: false
+    }
+
+    toggleCheck = () =>  {
+        this.setState({
+            checked: !this.state.checked
+        })
     }
 
     edit = () => {
@@ -48,7 +55,9 @@ class ListItem extends Component {
     renderDisplay = () => {
         return (
             <div id={this.props.item} className="ListItem">
-               { this.props.children }
+               <button onClick={ this.toggleCheck }>
+                    <FaRegCircle /> <span className="text-status">{ this.props.children }</span>
+                </button>
                <span>
                     <button onClick={ this.edit } id="edit"><FaPen /></button>
                     <button onClick={ this.remove } id="remove"><FaTrash /></button>
