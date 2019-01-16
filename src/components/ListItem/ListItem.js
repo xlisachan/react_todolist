@@ -59,7 +59,7 @@ class ListItem extends Component {
         return (
             <div id={this.props.item} className="ListItem">
                <button onClick={ this.toggleCheck }>
-                    { status } <span className="text-status">{ this.props.children }</span>
+                    { status } <span style={{textDecoration: this.state.checked ? "line-through" : "none"}} className="text-status">{ this.props.children }</span>
                 </button>
                <span>
                     <button onClick={ this.edit } id="edit"><FaPen /></button>
