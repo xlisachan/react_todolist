@@ -29,7 +29,7 @@ button {
     border: none;
 }
 
-#edit {
+#add, #edit {
     color: darkslateblue;
 }
 
