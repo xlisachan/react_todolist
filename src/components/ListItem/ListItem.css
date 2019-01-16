@@ -1,0 +1,42 @@
+.ListItem {
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px dotted slategray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+textarea {
+    width: 90%;
+    background: transparent;
+    border: none;
+    font-family: Pangolin, sans-serif;
+    font-size: 1em;
+    letter-spacing: 1.1px;
+    line-height: 0.6;
+}
+
+button {
+    background: #f9f9f9;
+    border: none;
+}
+
+#edit {
+    color: darkslateblue;
+}
+
+#save {
+    color: green;
+}
+
+#remove {
+    color: red;
+}

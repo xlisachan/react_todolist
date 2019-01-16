@@ -14,6 +14,12 @@ class List extends Component {
         })
     }
 
+    remove = (id) => {
+        this.setState(prevState => ({
+            tasks: prevState.tasks.filter(task => task.id !== id)
+        }))
+    }
+
     render() {
         return (
             <div className="List">
@@ -22,7 +28,8 @@ class List extends Component {
                     { this.state.tasks.map(task => {
                         return (
                             <ListItem key={ task.id }
-                                      index={ task.id }>
+                                      item={ task.id }
+                                      onRemove={ this.remove }>
                                 { task.task }
                             </ListItem>
                         )
