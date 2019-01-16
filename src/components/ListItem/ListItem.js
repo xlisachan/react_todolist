@@ -17,13 +17,29 @@ class ListItem extends Component {
         this.props.onRemove(this.props.item)
     }
 
+    save = (e) => {
+        e.preventDefault();
+        this.props.onChange(this._newText.value, this.props.item);
+        this.setState({
+            editing: false
+        })
+    }
+
+    cancel = (e) => {
+        e.preventDefault();
+        this.setState({
+            editing: false
+        })
+    }
+
     renderForm = () => {
         return (
             <div id={this.props.item} className="ListItem">
                 <form>
-                    <textarea defaultValue={this.props.children}/>
-                    <button id="save"><FaSave /></button>
-                    <button id="remove"><FaTimes /></button>
+                    <textarea ref={input => this._newText = input}
+                              defaultValue={this.props.children}/>
+                    <button onClick={this.save} id="save"><FaSave /></button>
+                    <button onClick={this.cancel} id="remove"><FaTimes /></button>
                 </form>
             </div>
         )

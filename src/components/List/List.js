@@ -14,6 +14,14 @@ class List extends Component {
         })
     }
 
+    update = (newText, i) => {
+        this.setState(prevState => ({
+            tasks: prevState.tasks.map(
+                task => (task.id !== i) ? task : {...task, task: newText}
+            )
+        }))
+    }
+
     remove = (id) => {
         this.setState(prevState => ({
             tasks: prevState.tasks.filter(task => task.id !== id)
@@ -29,6 +37,7 @@ class List extends Component {
                         return (
                             <ListItem key={ task.id }
                                       item={ task.id }
+                                      onChange={ this.update }
                                       onRemove={ this.remove }>
                                 { task.task }
                             </ListItem>
