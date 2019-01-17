@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ListItem from '../ListItem/ListItem';
 import '../List/List.css';
-import { FaPlus } from 'react-icons/fa';
+import { FaExclamationCircle, FaPlus } from 'react-icons/fa';
 
 class List extends Component {
     state = {
@@ -24,16 +24,20 @@ class List extends Component {
     
     add = (e) => {
         e.preventDefault();
-        this.setState(prevState => ({
-            tasks: [
-                ...prevState.tasks,
-                {
-                    id: this.nextId(),
-                    task: this.state.userInput
-                }
-            ],
-            userInput: ''
-        }))
+        if (this.state.userInput) {
+            this.setState(prevState => ({
+                tasks: [
+                    ...prevState.tasks,
+                    {
+                        id: this.nextId(),
+                        task: this.state.userInput
+                    }
+                ],
+                userInput: ''
+            }))
+        } else {
+            document.getElementById('popup-alert').setAttribute('style', 'display: inline');
+        }
     }
 
     nextId = () => {
@@ -55,10 +59,19 @@ class List extends Component {
         }))
     }
 
+    popup = () => {
+        document.getElementById('popup-alert').setAttribute('style','display: none');
+    }
+
     render() {
         return (
-            <div className="List">
+            <div id="todolist" className="List">
                 <div className="list-header">To Do List</div>
+                <div id="popup-alert" style={{display: 'none'}}>
+                    <FaExclamationCircle />
+                    <p>Task was not entered in text field</p>
+                    <button id="alert" onClick={ this.popup }>OK</button>
+                </div>
                 <form className="add-form" onSubmit={ this.add }>
                     <input type="text" 
                             onChange={ this.handleUserInput } 
