@@ -17,6 +17,8 @@ class List extends Component {
     }
 
     handleUserInput = e => {
+        this.refs.alertMessage.setAttribute('style', 'display: none');
+        this.refs.taskInput.setAttribute('style', 'border: 1px solid slategray');
         this.setState({
             userInput: e.target.value
         })
@@ -35,12 +37,12 @@ class List extends Component {
                 ],
                 userInput: ''
             }))
-            document.getElementById('alert-message').setAttribute('style', 'display: none');
-            document.getElementById('task-input-field').setAttribute('style', 'border: 1px solid black');
+            this.refs.alertMessage.setAttribute('style', 'display: none');
+            this.refs.taskInput.setAttribute('style', 'border: 1px solid slategray');
         } else {
-            document.getElementById('popup-alert').setAttribute('style', 'display: inline');
-            document.getElementById('alert-message').setAttribute('style', 'display: inline');
-            document.getElementById('task-input-field').setAttribute('style', 'border: 1px solid red');
+            this.refs.popupAlert.setAttribute('style', 'display: inline');
+            this.refs.alertMessage.setAttribute('style', 'display: inline');
+            this.refs.taskInput.setAttribute('style', 'border: 1px solid red');
         }
     }
 
@@ -64,44 +66,44 @@ class List extends Component {
     }
 
     popup = () => {
-        document.getElementById('popup-alert').setAttribute('style','display: none');
+        this.refs.popupAlert.setAttribute('style','display: none');
     }
 
     render() {
         return (
-            <div id="todolist" className="List">
+            <div className="List">
                 <div className="list-header">To Do List</div>
                 <div className="list-body">
                     <div className="list-form">
-                        <div id="alert-message" style={{display: 'none'}}>
+                        <div className="alert-message" style={{display: 'none'}} ref="alertMessage">
                             <FaExclamationCircle /> Enter a task
                         </div>
                         <form className="add-form" onSubmit={ this.add }>
-                            <input id="task-input-field"
-                                    type="text" 
-                                    onChange={ this.handleUserInput } 
-                                    placeholder="Add task to list"
-                                    value={ this.state.userInput } />
-                            <button id="add"><FaPlus /></button>
+                            <input type="text" 
+                                   placeholder="Add task to list"
+                                   onChange={ this.handleUserInput } 
+                                   value={ this.state.userInput } 
+                                   ref="taskInput" />
+                            <button className="add" onClick={ this.add }><FaPlus /></button>
                         </form>
                     </div>
                     <div className="list-items">
                         { this.state.tasks.map(task => {
                             return (
                                 <ListItem key={ task.id }
-                                        item={ task.id }
-                                        onChange={ this.update }
-                                        onRemove={ this.remove }>
+                                          item={ task.id }
+                                          onChange={ this.update }
+                                          onRemove={ this.remove }>
                                     { task.task }
                                 </ListItem>
                             )
                         })}
                     </div>
                 </div>
-                <div id="popup-alert" style={{display: 'none'}}>
+                <div className="popup-alert" style={{display: 'none'}} ref="popupAlert" >
                     <FaExclamationCircle />
                     <p>Task was not entered in text field</p>
-                    <button id="alert-btn" onClick={ this.popup }>OK</button>
+                    <button className="alert-btn" onClick={ this.popup }>OK</button>
                 </div>
             </div>
         )

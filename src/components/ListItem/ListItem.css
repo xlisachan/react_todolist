@@ -26,18 +26,18 @@ button {
     border: none;
 }
 
-#status-btn {
+.status-btn {
     text-align: left;
 }
 
-#edit, #remove {
+.edit, .remove {
     color: darkslateblue;
 }
 
-#add, #save, #edit:hover {
+.add, .save, .edit:hover {
     color: green;
 }
 
-#cancel, #remove:hover {
+.cancel, .remove:hover {
     color: red;
 }

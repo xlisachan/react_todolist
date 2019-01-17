@@ -44,10 +44,10 @@ class ListItem extends Component {
             <div id={this.props.item} className="ListItem">
                 <form>
                     <textarea ref={input => this._newText = input}
-                              defaultValue={this.props.children}/>
+                              defaultValue={ this.props.children }/>
                     <span>
-                        <button onClick={this.save} id="save"><FaSave /></button>
-                        <button onClick={this.cancel} id="cancel"><FaTimes /></button>
+                        <button className="save" onClick={ this.save }><FaSave /></button>
+                        <button className="cancel" onClick={ this.cancel }><FaTimes /></button>
                     </span>
                 </form>
             </div>
@@ -60,12 +60,12 @@ class ListItem extends Component {
 
         return (
             <div id={this.props.item} className="ListItem">
-               <button id="status-btn" onClick={ this.toggleCheck }>
+               <button className="status-btn" onClick={ this.toggleCheck }>
                     { status } <span style={{textDecoration: this.state.checked ? "line-through" : "none"}} className="text-status">{ this.props.children }</span>
                 </button>
                <span>
-                    <button onClick={ this.edit } id="edit"><FaPen /></button>
-                    <button onClick={ this.remove } id="remove"><FaTrash /></button>
+                    <button className="edit" onClick={ this.edit }><FaPen /></button>
+                    <button className="remove" onClick={ this.remove }><FaTrash /></button>
                 </span>
             </div>
         )

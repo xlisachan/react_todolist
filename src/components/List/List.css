@@ -26,7 +26,7 @@
     overflow: auto;
 }
 
-#alert-message {
+.alert-message {
     display: flex;
     align-items: center;
     color: red;
@@ -50,7 +50,7 @@ input {
     font-size: 0.9em;
 }
 
-#popup-alert {
+.popup-alert {
     padding: 5px 10px;
     background: #f9f9f9;
     color: red;
@@ -60,7 +60,7 @@ input {
     text-align: center;
 }
 
-#alert-btn {
+.alert-btn {
     margin-bottom: 5px;
     background: lightgray;
     color: black;
