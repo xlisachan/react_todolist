@@ -35,8 +35,12 @@ class List extends Component {
                 ],
                 userInput: ''
             }))
+            document.getElementById('alert-message').setAttribute('style', 'display: none');
+            document.getElementById('task-input-field').setAttribute('style', 'border: 1px solid black');
         } else {
             document.getElementById('popup-alert').setAttribute('style', 'display: inline');
+            document.getElementById('alert-message').setAttribute('style', 'display: inline');
+            document.getElementById('task-input-field').setAttribute('style', 'border: 1px solid red');
         }
     }
 
@@ -67,29 +71,37 @@ class List extends Component {
         return (
             <div id="todolist" className="List">
                 <div className="list-header">To Do List</div>
+                <div className="list-body">
+                    <div className="list-form">
+                        <div id="alert-message" style={{display: 'none'}}>
+                            <FaExclamationCircle /> Enter a task
+                        </div>
+                        <form className="add-form" onSubmit={ this.add }>
+                            <input id="task-input-field"
+                                    type="text" 
+                                    onChange={ this.handleUserInput } 
+                                    placeholder="Add task to list"
+                                    value={ this.state.userInput } />
+                            <button id="add"><FaPlus /></button>
+                        </form>
+                    </div>
+                    <div className="list-items">
+                        { this.state.tasks.map(task => {
+                            return (
+                                <ListItem key={ task.id }
+                                        item={ task.id }
+                                        onChange={ this.update }
+                                        onRemove={ this.remove }>
+                                    { task.task }
+                                </ListItem>
+                            )
+                        })}
+                    </div>
+                </div>
                 <div id="popup-alert" style={{display: 'none'}}>
                     <FaExclamationCircle />
                     <p>Task was not entered in text field</p>
-                    <button id="alert" onClick={ this.popup }>OK</button>
-                </div>
-                <form className="add-form" onSubmit={ this.add }>
-                    <input type="text" 
-                            onChange={ this.handleUserInput } 
-                            placeholder="Add task to list"
-                            value={ this.state.userInput } />
-                    <button id="add"><FaPlus /></button>
-                </form>
-                <div className="list-body">
-                    { this.state.tasks.map(task => {
-                        return (
-                            <ListItem key={ task.id }
-                                      item={ task.id }
-                                      onChange={ this.update }
-                                      onRemove={ this.remove }>
-                                { task.task }
-                            </ListItem>
-                        )
-                    })}
+                    <button id="alert-btn" onClick={ this.popup }>OK</button>
                 </div>
             </div>
         )
