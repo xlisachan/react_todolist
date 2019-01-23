@@ -4,3 +4,54 @@
   flex-direction: column;
   height: 100vh;
 }
+
+.background-items {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 50px;
+  z-index: 1;
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  width: 90px;
+  height: 160px;
+  min-width: 90px;
+  min-height: 160px;
+  background: white;
+  border: 1px solid slategray;
+  border-radius: 7px 7px 7px 7px;
+  box-shadow: 1px 1px 2px 1px darkslategray;
+  transform: rotate(340deg);
+}
+
+.phone-camera {
+  width: 5px;
+  height: 5px;
+  background: black;
+  border-radius: 50%;
+  border: 1px solid slategray;
+}
+
+.phone-screen {
+  width: 90%;
+  height: 80%;
+  background: black;
+}
+
+.phone-homebutton {
+  width: 15px;
+  height: 15px;
+  color: white;
+  border-radius: 50%;
+  border: 2px inset slategray;
+}

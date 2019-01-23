@@ -7,6 +7,13 @@ class Desktop extends Component {
     return (
       <div className="Desktop">
         <List />
+        <div className="background-items">
+          <div className="phone">
+            <div className="phone-camera"></div>
+            <div className="phone-screen"></div>
+            <div className="phone-homebutton"></div>
+          </div>
+        </div>
       </div>
     );
   }
