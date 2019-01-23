@@ -1,28 +1,36 @@
+.list-items {
+    width: 90%;
+    height: 70%;
+    overflow: auto;
+}
+
 .ListItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px dotted slategray;
+    line-height: 2;
 }
 
 .text-status {
-    font-family: Pangolin, sans-serif;
-    font-size: 1.2em;
     letter-spacing: 1.1px;
 }
 
 textarea {
+    margin-left: 20px;
     width: 70%;
     background: transparent;
     border: none;
-    font-family: Pangolin, sans-serif;
+    font-family: "Mali", sans-serif;
     font-size: 1em;
     letter-spacing: 1.1px;
-    line-height: 0.6;
+    line-height: 0.7;
 }
 
 button {
-    background: #f9f9f9;
+    font-family: "Mali", sans-serif;
+    font-size: 1em;
+    background: transparent;
     border: none;
 }
 
@@ -30,14 +38,22 @@ button {
     text-align: left;
 }
 
-.edit, .remove {
-    color: darkslateblue;
+.status-font {
+    color: black;
 }
 
-.add, .save, .edit:hover {
+.status, .edit, .remove, .save, .cancel {
+    color: darkcyan;
+}
+
+.add {
+    color: greenyellow;
+}
+
+.edit:hover, .save:hover {
     color: green;
 }
 
-.cancel, .remove:hover {
+.cancel:hover, remove:hover {
     color: red;
 }

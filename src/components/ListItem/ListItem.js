@@ -42,7 +42,7 @@ class ListItem extends Component {
     renderForm = () => {
         return (
             <div id={this.props.item} className="ListItem">
-                <form>
+                <form className="edit-form">
                     <textarea ref={input => this._newText = input}
                               defaultValue={ this.props.children }/>
                     <span>
@@ -60,8 +60,8 @@ class ListItem extends Component {
 
         return (
             <div id={this.props.item} className="ListItem">
-               <button className="status-btn" onClick={ this.toggleCheck }>
-                    { status } <span style={{textDecoration: this.state.checked ? "line-through" : "none"}} className="text-status">{ this.props.children }</span>
+               <button className="status status-btn" onClick={ this.toggleCheck }>
+                    { status } <span style={{textDecoration: this.state.checked ? "line-through" : "none"}} className="text-status"><span className="status-font">{ this.props.children }</span></span>
                 </button>
                <span>
                     <button className="edit" onClick={ this.edit }><FaPen /></button>

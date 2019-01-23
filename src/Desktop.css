@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Pangolin');
-
 .Desktop {
-  min-width: 375px;
-  height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: center;
-  font-family: Pangolin, Georgia, sans-serif;
-  background: aliceblue;
+  flex-direction: column;
+  height: 100vh;
 }

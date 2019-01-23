@@ -73,32 +73,30 @@ class List extends Component {
         return (
             <div className="List">
                 <div className="list-header">To Do List</div>
-                <div className="list-body">
-                    <div className="list-form">
-                        <div className="alert-message" style={{display: 'none'}} ref="alertMessage">
-                            <FaExclamationCircle /> Enter a task
-                        </div>
-                        <form className="add-form" onSubmit={ this.add }>
-                            <input type="text" 
-                                   placeholder="Add task to list"
-                                   onChange={ this.handleUserInput } 
-                                   value={ this.state.userInput } 
-                                   ref="taskInput" />
-                            <button className="add" onClick={ this.add }><FaPlus /></button>
-                        </form>
+                <div className="list-form">
+                    <div className="alert-message" style={{display: 'none'}} ref="alertMessage">
+                        <FaExclamationCircle /> Enter a task
                     </div>
-                    <div className="list-items">
-                        { this.state.tasks.map(task => {
-                            return (
-                                <ListItem key={ task.id }
-                                          item={ task.id }
-                                          onChange={ this.update }
-                                          onRemove={ this.remove }>
-                                    { task.task }
-                                </ListItem>
-                            )
-                        })}
-                    </div>
+                    <form className="add-form" onSubmit={ this.add }>
+                        <input type="text" 
+                                placeholder="Add task to list"
+                                onChange={ this.handleUserInput } 
+                                value={ this.state.userInput } 
+                                ref="taskInput" />
+                        <button className="add" onClick={ this.add }><FaPlus /></button>
+                    </form>
+                </div>
+                <div className="list-items">
+                    { this.state.tasks.map(task => {
+                        return (
+                            <ListItem key={ task.id }
+                                        item={ task.id }
+                                        onChange={ this.update }
+                                        onRemove={ this.remove }>
+                                { task.task }
+                            </ListItem>
+                        )
+                    })}
                 </div>
                 <div className="popup-alert" style={{display: 'none'}} ref="popupAlert" >
                     <FaExclamationCircle />
