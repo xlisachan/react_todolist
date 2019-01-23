@@ -1,14 +1,14 @@
 [
     {
         "id": 0,
-        "task": "Buy groceries"
+        "task": "Check weather"
     },
     {
         "id": 1,
-        "task": "Prepare meals"
+        "task": "Get travel-sized containers"
       },
     {
         "id": 2,
-        "task": "Wash dishes"
+        "task": "Remember to bring your charger"
     }
   ]
