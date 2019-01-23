@@ -12,10 +12,6 @@
     line-height: 2;
 }
 
-.text-status {
-    letter-spacing: 1.1px;
-}
-
 textarea {
     margin-left: 20px;
     width: 70%;
@@ -29,13 +25,18 @@ textarea {
 
 button {
     font-family: "Mali", sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     background: transparent;
     border: none;
 }
 
+.button-div {
+    width: 70px;
+}
+
 .status-btn {
     text-align: left;
+    width: 70%;
 }
 
 .status-font {

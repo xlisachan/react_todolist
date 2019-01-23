@@ -61,9 +61,9 @@ class ListItem extends Component {
         return (
             <div id={this.props.item} className="ListItem">
                <button className="status status-btn" onClick={ this.toggleCheck }>
-                    { status } <span style={{textDecoration: this.state.checked ? "line-through" : "none"}} className="text-status"><span className="status-font">{ this.props.children }</span></span>
+                    { status } <span style={{textDecoration: this.state.checked ? "line-through" : "none"}}><span className="status-font">{ this.props.children }</span></span>
                 </button>
-               <span>
+               <span className="button-div">
                     <button className="edit" onClick={ this.edit }><FaPen /></button>
                     <button className="remove" onClick={ this.remove }><FaTrash /></button>
                 </span>
