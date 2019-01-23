@@ -18,9 +18,9 @@ textarea {
     background: transparent;
     border: none;
     font-family: "Mali", sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     letter-spacing: 1.1px;
-    line-height: 0.7;
+    line-height: 1;
 }
 
 button {
@@ -55,6 +55,6 @@ button {
     color: green;
 }
 
-.cancel:hover, remove:hover {
+.cancel:hover, .remove:hover {
     color: red;
 }
