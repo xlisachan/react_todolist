@@ -1,9 +1,9 @@
 # <a href="https://xlisachan.github.io/react_todolist/">To Do List</a>
-* Built and designed a user interface with CRUD functionality using React
-* Demonstrated understanding of React components, component states and properties, as well as events and lifecycle methods
+* Built a simple to-do list with CRUD functionality using React
+* Incorporated understanding of React components, component states and properties, as well as events and lifecycle methods
 
 # Features and Functionality
-* Helps user to organize tasks and/or manage projects by allowing them to create, edit, and delete tasks from a list
+* Designed a responsive user interface that allows users to organize tasks and/or manage projects by allowing them to create, edit, and delete tasks from a list
 
 # Built With
 * React, JavaScript, HTML, CSS
