@@ -12,6 +12,15 @@
     line-height: 2;
 }
 
+.ListItem > span {
+    width: 70px;
+    opacity: 0;
+}
+
+.ListItem:hover > span {
+    opacity: 1;
+}
+
 textarea {
     margin-left: 20px;
     width: 70%;
@@ -28,15 +37,6 @@ button {
     font-size: 0.9em;
     background: transparent;
     border: none;
-}
-
-.ListItem > span {
-    width: 70px;
-    opacity: 0;
-}
-
-.ListItem:hover > span {
-    opacity: 1;
 }
 
 .status-btn {
