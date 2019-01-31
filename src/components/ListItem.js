@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../ListItem/ListItem.css';
+import '../stylesheets/ListItem.css';
 import { FaRegCircle, FaCheckCircle, FaSave, FaTimes, FaPen, FaTrash } from 'react-icons/fa';
 
 class ListItem extends Component {

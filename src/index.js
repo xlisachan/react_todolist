@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Desktop from './Desktop';
+import './stylesheets/index.css';
+import Desktop from './components/Desktop';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Desktop />, document.getElementById('root'));
