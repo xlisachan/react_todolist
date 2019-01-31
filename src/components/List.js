@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ListItem from '../ListItem/ListItem';
-import '../List/List.css';
+import ListItem from './ListItem';
+import '../stylesheets/List.css';
 import { FaExclamationCircle, FaPlus } from 'react-icons/fa';
 
 class List extends Component {
@@ -10,7 +10,7 @@ class List extends Component {
     }
 
     componentDidMount() {
-        var data = require('../../../src/data.json');
+        var data = require('../../src/data.json');
         this.setState({ 
           tasks: data
         })

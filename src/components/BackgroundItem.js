@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './BackgroundItem.css'
+import '../stylesheets/BackgroundItem.css'
 import { FaGlobeAmericas } from 'react-icons/fa';
 
 class BackgroundItem extends Component {

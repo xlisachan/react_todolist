@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Desktop.css';
-import List from './components/List/List';
-import BackgroundItem from './components/BackgroundItem/BackgroundItem';
+import '../stylesheets/Desktop.css';
+import List from './List';
+import BackgroundItem from './BackgroundItem';
 
 class Desktop extends Component {
   render() {
