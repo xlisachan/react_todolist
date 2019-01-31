@@ -30,8 +30,13 @@ button {
     border: none;
 }
 
-.button-div {
+.ListItem > span {
     width: 70px;
+    opacity: 0;
+}
+
+.ListItem:hover > span {
+    opacity: 1;
 }
 
 .status-btn {
