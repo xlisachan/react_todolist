@@ -39,6 +39,10 @@ button {
     border: none;
 }
 
+button:focus {
+    outline: none;
+}
+
 .status-btn {
     text-align: left;
     width: 70%;
