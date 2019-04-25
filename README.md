@@ -10,4 +10,6 @@
 
 # Deployment
 <a href="https://xlisachan.github.io/todolist/">https://xlisachan.github.io/react_todolist/</a>
-<img width="30%" height="auto" src="https://raw.githubusercontent.com/xlisachan/react_todolist/master/public/Screenshot-todolist.png"/>
+<p>
+   <img width="30%" height="auto" src="https://raw.githubusercontent.com/xlisachan/react_todolist/master/public/Screenshot-todolist.png"/>
+</p>
