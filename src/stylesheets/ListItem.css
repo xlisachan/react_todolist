@@ -45,7 +45,7 @@ button:focus {
 
 .status-btn {
     text-align: left;
-    width: 70%;
+    width: 80%;
 }
 
 .status-font {
@@ -58,6 +58,8 @@ button:focus {
 
 .add {
     color: greenyellow;
+    position: relative;
+    top: 2px;
 }
 
 .edit:hover, .save:hover {

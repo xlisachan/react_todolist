@@ -5,9 +5,11 @@ import { FaGlobeAmericas } from 'react-icons/fa';
 const BackgroundItem = () => (
   <div className="background-items">
       <div className="phone">
-        <div className="phone-camera"></div>
+        <div style={{width: '94%', display: 'flex', justifyContent: 'space-between'}}>
+          <div className="phone-camera1"></div>
+          <div className="phone-camera2"></div>
+        </div>
         <div className="phone-screen"></div>
-        <div className="phone-homebutton"></div>
       </div>
       <div className="passport">
         <div className="passport-book">

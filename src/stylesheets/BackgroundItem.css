@@ -1,5 +1,5 @@
 .background-items {
-    width: 100%;
+    width: 85%;
     min-width: 300px;
     max-width: 600px;
     margin: 0 auto;
@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    top: 50px;
+    top: 20px;
     z-index: 1;
 }
   
@@ -15,39 +15,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2px;
     width: 90px;
     height: 160px;
     min-width: 90px;
     min-height: 160px;
-    background: white;
-    border: 1px solid slategray;
+    background: gainsboro;
     border-radius: 7px 7px 7px 7px;
     box-shadow: 1px 1px 2px 1px darkslategray;
     transform: rotate(340deg);
 }
 
-.phone-camera {
-    width: 5px;
-    height: 5px;
+.phone-camera1 {
+    width: 23px;
+    height: 4px;
     background: black;
-    border-radius: 50%;
-    border: 1px solid slategray;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.phone-camera2 {
+    width: 23px;
+    height: 4px;
+    background: black;
+    border-radius: 0px 10px 0px 0px;
 }
 
 .phone-screen {
-    width: 90%;
-    height: 80%;
+    width: 93%;
+    height: 95%;
+    border-radius: 0 0 5px 5px;
     background: black;
-}
-
-.phone-homebutton {
-    width: 15px;
-    height: 15px;
-    color: white;
-    border-radius: 50%;
-    border: 2px inset slategray;
 }
 
 .passport {
