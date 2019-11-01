@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/List.css';
+import PropTypes from 'prop-types';
 import { FaExclamationCircle, FaPlus } from 'react-icons/fa';
 
 const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSubmit=f=>f, renderTasks=f=>f}, ref) => {
@@ -35,5 +36,14 @@ const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSub
         </div>
     )
 })
+
+List.propTypes = {
+    alert: PropTypes.bool.isRequired,
+    error: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    renderTasks: PropTypes.func
+}
 
 export default List;
