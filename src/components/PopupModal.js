@@ -4,9 +4,9 @@ import { FaExclamationCircle } from 'react-icons/fa';
 
 const PopupModal = ({error, onClose=f=>f}) => {
     return (
-        <div className="popup-alert" style={{display: error ? 'inline' : 'none'}}>
+        <div className="popup-alert" style={{display: error ? 'inline' : 'none', fontSize: "1rem"}}>
             <div>
-                <FaExclamationCircle />
+                <FaExclamationCircle style ={{color: 'red', fontSize: "x-large"}} />
                 <p>Task was not entered in text field</p>
             </div>
                 
