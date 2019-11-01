@@ -1,29 +1,20 @@
 import React from 'react';
 import '../stylesheets/List.css';
 import PropTypes from 'prop-types';
-import { FaExclamationCircle, FaPlus } from 'react-icons/fa';
 import PopupModal from './PopupModal';
+import Form from './Form';
 
 const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSubmit=f=>f, renderTasks=f=>f}, ref) => {
     return (
         <div className="List">
             <div className="list-header">To Do List</div>
             
-            <div className="list-form">
-                <div className="alert-message" style={{display: alert ? 'inline' : 'none'}}>
-                    <FaExclamationCircle /> Enter a task
-                </div>
-                <form className="add-form" onSubmit={ onSubmit }>
-                    <input
-                        ref={ref}
-                        type="text" 
-                        placeholder="Add task"
-                        onChange={ onChange } 
-                        style={{display: error ? 'border: 1px solid red' : 'border: 1px solid slategray'}}
-                    />
-                    <button className="add" type="submit"><FaPlus /></button>
-                </form>
-            </div>
+            <Form
+                alert={alert}
+                error={error}
+                onChange={onChange}
+                onSubmit={onSubmit}
+            />
 
             <div className="list-items">
                 { renderTasks() }
