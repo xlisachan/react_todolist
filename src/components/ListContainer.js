@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import List from './List';
+import ListItem from './ListItem';
 
 class ListContainer extends Component {
     state = {
@@ -68,18 +69,24 @@ class ListContainer extends Component {
         this.setState({ error: false })
     }
 
+    renderTasks = () => {
+        return this.state.tasks.map(task =>
+            <ListItem key={ task.id } item={ task.id } onChange={ this.update } onRemove={ this.remove }>
+                { task.task }
+            </ListItem>
+        )
+    }
+
     render() {
         return (
             <List
                 ref={input => this.inputEl = input}
                 alert={this.state.alert}
                 error={this.state.error}
-                tasks={this.state.tasks}
                 onChange={this.handleUserInput}
                 onSubmit={this.add}
-                onUpdate={this.update}
-                onRemove={this.remove}
                 onClose={this.closeError}
+                renderTasks={this.renderTasks}
             />
         )
     }
