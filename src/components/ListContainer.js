@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
 import ListItem from './ListItem';
+import axios from 'axios';
 
 class ListContainer extends Component {
     state = {
@@ -11,8 +12,16 @@ class ListContainer extends Component {
     }
 
     componentDidMount() {
-        var data = require('../../src/data.json');
-        this.setState({ tasks: data })
+        axios
+            .get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+            .then(res => {
+                let titles = res.data.map(el => ({
+                        id: el.id,
+                        task: el.title
+                }))
+                this.setState({tasks: titles})
+            })
+            .catch(err => console.error(err));
     }
 
     handleUserInput = e => {
