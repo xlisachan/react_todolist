@@ -56,21 +56,20 @@ input {
 }
 
 .popup-alert {
-    width: 50%;
-    padding: 5px 10px;
-    color: red;
+    padding: 10px;
     position: absolute;
     background: white;
     border: 1px solid black;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
 .alert-btn {
     margin-bottom: 5px;
+    padding: 5px;
     background: lightgray;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    border: 1px solid slategray;
+    border: 1px solid black;
+    border-radius: 3px;
 }
