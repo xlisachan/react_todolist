@@ -1,12 +1,12 @@
 import React from 'react';
-import ListItem from './ListItem';
 import '../stylesheets/List.css';
 import { FaExclamationCircle, FaPlus } from 'react-icons/fa';
 
-const List = React.forwardRef(({alert, error, tasks, onChange=f=>f, onClose=f=>f, onSubmit=f=>f, onUpdate=f=>f, onRemove=f=>f}, ref) => {
+const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSubmit=f=>f, renderTasks=f=>f}, ref) => {
     return (
         <div className="List">
             <div className="list-header">To Do List</div>
+            
             <div className="list-form">
                 <div className="alert-message" style={{display: alert ? 'inline' : 'none'}}>
                     <FaExclamationCircle /> Enter a task
@@ -24,13 +24,7 @@ const List = React.forwardRef(({alert, error, tasks, onChange=f=>f, onClose=f=>f
             </div>
 
             <div className="list-items">
-                { tasks.map(task => {
-                    return (
-                        <ListItem key={ task.id } item={ task.id } onChange={ onUpdate } onRemove={ onRemove }>
-                            { task.task }
-                        </ListItem>
-                    )
-                })}
+                { renderTasks() }
             </div>
 
             <div className="popup-alert" style={{display: error ? 'inline' : 'none'}}>
