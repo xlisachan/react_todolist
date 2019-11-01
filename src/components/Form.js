@@ -8,6 +8,7 @@ const Form = React.forwardRef(({alert, error, onChange=f=>f, onSubmit=f=>f}, ref
             <div className="alert-message" style={{display: alert ? 'inline' : 'none'}}>
                 <FaExclamationCircle /> Enter a task
             </div>
+
             <form className="add-form" onSubmit={ onSubmit }>
                 <input
                     ref={ref}
@@ -16,6 +17,7 @@ const Form = React.forwardRef(({alert, error, onChange=f=>f, onSubmit=f=>f}, ref
                     onChange={ onChange } 
                     style={{display: error ? 'border: 1px solid red' : 'border: 1px solid slategray'}}
                 />
+                
                 <button className="add" type="submit"><FaPlus /></button>
             </form>
         </div>

@@ -6,6 +6,7 @@ import Passport from './Passport';
 const BackgroundItem = () => (
   <div className="background-items">
     <Phone />
+    
     <Passport />
   </div>
 )
