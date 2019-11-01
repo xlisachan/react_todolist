@@ -1,11 +1,11 @@
 import React from 'react';
 import '../stylesheets/Desktop.css';
-import List from './List';
+import ListContainer from './ListContainer';
 import BackgroundItem from './BackgroundItem';
 
 const Desktop = () => (
   <div className="Desktop">
-    <List />
+    <ListContainer />
     <BackgroundItem />
   </div>
 );
