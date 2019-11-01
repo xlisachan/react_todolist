@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import List from './List';
 import ListItem from './ListItem';
 import axios from 'axios';
+import uuid from 'uuid';
 
 class ListContainer extends Component {
     state = {
@@ -38,7 +39,7 @@ class ListContainer extends Component {
                 tasks: [
                     ...prevState.tasks,
                     {
-                        id: this.nextId(),
+                        id: uuid.v4(),
                         task: this.state.userInput
                     }
                 ],
@@ -53,11 +54,6 @@ class ListContainer extends Component {
                 error: true
             })
         }
-    }
-
-    nextId = () => {
-        this.uniqueId = this.uniqueId || 4
-        return this.uniqueId++
     }
 
     update = (newText, i) => {
