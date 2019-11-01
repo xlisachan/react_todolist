@@ -2,6 +2,7 @@ import React from 'react';
 import '../stylesheets/List.css';
 import PropTypes from 'prop-types';
 import { FaExclamationCircle, FaPlus } from 'react-icons/fa';
+import PopupModal from './PopupModal';
 
 const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSubmit=f=>f, renderTasks=f=>f}, ref) => {
     return (
@@ -28,11 +29,7 @@ const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSub
                 { renderTasks() }
             </div>
 
-            <div className="popup-alert" style={{display: error ? 'inline' : 'none'}}>
-                <FaExclamationCircle />
-                <p>Task was not entered in text field</p>
-                <button className="alert-btn" onClick={ onClose }>OK</button>
-            </div>
+            <PopupModal error={error} onClose={onClose} />
         </div>
     )
 })
