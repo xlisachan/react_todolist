@@ -1,12 +1,12 @@
 import React from 'react';
 import './stylesheets/App.css';
 import ListContainer from './components/ListContainer';
-import BackgroundItem from './components/BackgroundItem';
+import Background from './components/Background';
 
 const App = () => (
   <div className="Desktop">
     <ListContainer />
-    <BackgroundItem />
+    <Background />
   </div>
 );
 
