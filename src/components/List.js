@@ -10,6 +10,7 @@ const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSub
             <div className="list-header">To Do List</div>
             
             <Form
+                ref={ref}
                 alert={alert}
                 error={error}
                 onChange={onChange}
@@ -23,7 +24,7 @@ const List = React.forwardRef(({alert, error, onChange=f=>f, onClose=f=>f, onSub
             <PopupModal error={error} onClose={onClose} />
         </div>
     )
-})
+});
 
 List.propTypes = {
     alert: PropTypes.bool.isRequired,
@@ -32,6 +33,6 @@ List.propTypes = {
     onClose: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
     renderTasks: PropTypes.func
-}
+};
 
 export default List;
