@@ -29,6 +29,11 @@
   ],
   "homepage": "https://xlisachan.github.io/react_todolist/",
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "gh-pages": "^2.2.0",
+    "prettier": "^1.19.1"
   }
 }
