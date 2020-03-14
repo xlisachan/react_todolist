@@ -10,29 +10,29 @@ class ListContainer extends Component {
         userInput: '',
         alert: false,
         error: false
-    }
+    };
 
     componentDidMount() {
         axios
-            .get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+            .get('https://jsonplaceholder.typicode.com/todos?_limit=5')
             .then(res => {
                 let titles = res.data.map(el => ({
                         id: el.id,
                         task: el.title
-                }))
-                this.setState({tasks: titles})
+                }));
+                this.setState({tasks: titles});
             })
             .catch(err => console.error(err));
-    }
+    };
 
     handleUserInput = e => {
         this.setState({
             alert: false,
             userInput: e.target.value
-        })
-    }
+        });
+    };
     
-    add = (e) => {
+    add = e => {
         e.preventDefault();
         if (this.state.userInput) {
             this.setState(prevState => ({
@@ -46,33 +46,33 @@ class ListContainer extends Component {
                 userInput: '',
                 alert: false,
                 error: false
-            }))
-            this.inputEl.value=""
+            }));
+            this.inputEl.value = "";
         } else {
             this.setState({
                 alert: true,
                 error: true
             })
         }
-    }
+    };
 
     update = (newText, i) => {
         this.setState(prevState => ({
             tasks: prevState.tasks.map(
                 task => (task.id !== i) ? task : {...task, task: newText}
             )
-        }))
-    }
+        }));
+    };
 
-    remove = (id) => {
+    remove = id => {
         this.setState(prevState => ({
             tasks: prevState.tasks.filter(task => task.id !== id)
         }))
-    }
+    };
 
     closeError = () => {
-        this.setState({ error: false })
-    }
+        this.setState({ error: false });
+    };
 
     renderTasks = () => {
         return this.state.tasks.map(task =>
@@ -80,7 +80,7 @@ class ListContainer extends Component {
                 { task.task }
             </ListItem>
         )
-    }
+    };
 
     render() {
         return (
@@ -94,7 +94,7 @@ class ListContainer extends Component {
                 renderTasks={this.renderTasks}
             />
         )
-    }
-}
+    };
+};
 
 export default ListContainer;
